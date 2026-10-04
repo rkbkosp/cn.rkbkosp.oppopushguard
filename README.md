@@ -16,6 +16,10 @@ The hook was checked against the Ace3 ColorOS 16.0.5.1002 system image and read-
 
 The module is a system-server hook and can affect notification delivery. Enable it only in LSPosed's **system framework** scope. To recover, disable it in LSPosed and reboot.
 
+## Disclaimer
+
+This module hooks Android's system notification service and changes notification delivery at runtime. It is provided **as is**, with no guarantee that it works on your device or ROM. The author is **not liable** for missed or delayed notifications, notification-service failures, boot loops, data loss, or any other damage arising from installing or using this module. Validate it on your own device and make sure you have a recovery path before enabling it.
+
 ## Build
 
 Requirements: JDK 17, Android SDK Platform 36, Build Tools 36.0.0. The Gradle wrapper pins Gradle 9.4.1 and the project uses Android Gradle Plugin 9.2.1.
@@ -36,7 +40,7 @@ The release workflow uses the existing PKCS#12 signing identity. Add these repos
 For example, from a trusted local terminal, upload the key file without writing it into the repository:
 
 ```sh
-base64 < /Users/rkbkosp/.android/signing/rkbkosp-release.p12 | tr -d '\n' | gh secret set OPPO_PUSH_KEYSTORE_BASE64 --repo rkbkosp/cn.rkbkosp.oppopushguard
+base64 < ~/.android/signing/rkbkosp-release.p12 | tr -d '\n' | gh secret set OPPO_PUSH_KEYSTORE_BASE64 --repo rkbkosp/cn.rkbkosp.oppopushguard
 gh secret set OPPO_PUSH_KEYSTORE_PASSWORD --repo rkbkosp/cn.rkbkosp.oppopushguard
 ```
 
@@ -57,4 +61,11 @@ Install the APK as a regular app, enable OPPO Push Guard in LSPosed, select only
 
 ## License
 
-No license has been granted for reuse of this source code. Contact the maintainer before redistributing or incorporating it into another project.
+MIT — see [LICENSE](LICENSE). You may use, copy, modify, merge, publish, distribute, sublicense and sell this project, including in closed-source form, as long as the copyright notice and the license text are retained. There is no warranty of any kind and no liability on the author; the full terms are in the license text.
+
+OPPO is a trademark of its respective owner. This is an independent compatibility module; it is not affiliated with, endorsed by, or authorized by OPPO.
+
+### Third-party components
+
+- `io.github.libxposed:api` — Apache License 2.0. Referenced at compile time only (`compileOnly`) and not bundled in the APK.
+- Gradle wrapper (`gradle/wrapper/gradle-wrapper.jar`) — Apache License 2.0.

@@ -16,6 +16,10 @@ Hook 已针对 Ace3 ColorOS 16.0.5.1002 系统镜像，以及只读提取的 PJE
 
 这是 system_server hook，会影响通知投递。启用时只选择 LSPosed 的**系统框架**作用域。恢复方法是在 LSPosed 中停用模块并重启。
 
+## 免责声明
+
+本模块在运行时 hook Android 系统通知服务并改变通知投递行为，**按现状提供**，不保证在你的设备或 ROM 上可用。因安装或使用本模块造成的通知漏失或延迟、通知服务异常、无法开机、数据丢失及其他任何损害，作者**不承担责任**。请在设备上自行验证，并在启用前确保有恢复手段。
+
 ## 构建
 
 需要 JDK 17、Android SDK Platform 36 和 Build Tools 36.0.0。仓库固定使用 Gradle 9.4.1 与 Android Gradle Plugin 9.2.1。
@@ -36,7 +40,7 @@ Release 工作流使用现有 PKCS#12 个人签名身份。创建版本 tag 前�
 可在可信任的本机终端上传密钥文件；命令不会把它写进仓库：
 
 ```sh
-base64 < /Users/rkbkosp/.android/signing/rkbkosp-release.p12 | tr -d '\n' | gh secret set OPPO_PUSH_KEYSTORE_BASE64 --repo rkbkosp/cn.rkbkosp.oppopushguard
+base64 < ~/.android/signing/rkbkosp-release.p12 | tr -d '\n' | gh secret set OPPO_PUSH_KEYSTORE_BASE64 --repo rkbkosp/cn.rkbkosp.oppopushguard
 gh secret set OPPO_PUSH_KEYSTORE_PASSWORD --repo rkbkosp/cn.rkbkosp.oppopushguard
 ```
 
@@ -57,4 +61,11 @@ Actions 会把签名 APK 和 SHA-256 校验文件附加到 GitHub Release。LSPo
 
 ## 许可证
 
-当前没有授予源代码复用许可。如需再分发或集成到其他项目，请先联系维护者。
+MIT，见 [LICENSE](LICENSE)。你可以使用、复制、修改、合并、发布、分发、再授权乃至出售本项目，包括闭源形式，只需保留版权声明和许可证正文。本项目不提供任何形式的担保，作者不承担任何责任，完整条款以许可证正文为准。
+
+OPPO 是其权利人的商标。本项目是独立的兼容性模块，与 OPPO 无关联，未获其授权或背书。
+
+### 第三方组件
+
+- `io.github.libxposed:api` —— Apache License 2.0，仅编译期引用（`compileOnly`），不打包进 APK。
+- Gradle wrapper（`gradle/wrapper/gradle-wrapper.jar`）—— Apache License 2.0。
