@@ -94,7 +94,9 @@ git push origin 1-0.1.0
 
 Actions 会把签名 APK 和 SHA-256 校验文件附加到 GitHub Release。上述初始版本 tag 已发布；发布新版本时需使用与构建配置一致的新 tag，不要重复推送旧版本。
 
-向 [Xposed 模块仓库](https://github.com/Xposed-Modules-Repo#repo-requirment) 提交或同步模块时，请遵守其元数据要求：仓库名使用应用 ID，仓库描述用作模块名称。因此用于模块目录的仓库描述保留为 `OPPO Push Guard`，功能说明放在本文和 `SUMMARY.md` 中。
+向 [Xposed 模块仓库](https://github.com/Xposed-Modules-Repo#repo-requirment) 提交或同步模块时，请遵守其元数据要求：仓库名使用应用 ID，仓库描述用作模块名称。因此用于模块目录的仓库描述保留为 `OPPO Push Guard`，功能说明放在本文和 `SUMMARY` 中。
+
+目录的简短介绍使用无扩展名的 [`SUMMARY`](SUMMARY)，详细介绍使用 `README.md`，见[官方提交说明](https://github.com/Xposed-Modules-Repo/submission/blob/main/README.md)。源码仓库与 [Xposed 模块目录仓库](https://github.com/Xposed-Modules-Repo/cn.rkbkosp.oppopushguard) 是两个独立仓库；更新本仓库后仍需核对并同步目录的说明与摘要，不能把源码 PR 合并视为目录已更新。
 
 </details>
 
