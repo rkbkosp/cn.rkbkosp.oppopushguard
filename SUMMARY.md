@@ -1,1 +1,0 @@
-Blocks notifications posted by non-system apps through OPPO Push's content and marketing channel. It runs in the Android system framework and leaves system apps and other notification channels unchanged.
