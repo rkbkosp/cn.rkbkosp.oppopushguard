@@ -96,7 +96,7 @@ Actions attaches the signed APK and a SHA-256 checksum to the GitHub Release. Th
 
 When submitting or syncing to the [Xposed Module Repository](https://github.com/Xposed-Modules-Repo#repo-requirment), follow its metadata requirements: the repository name is the application ID, and its description is used as the module name. Keep the catalog repository description as `OPPO Push Guard`; use this README and `SUMMARY` for the feature summary.
 
-The catalog uses [`SUMMARY`](SUMMARY) (without an extension) for its short description and `README.md` for the full description; see the [submission instructions](https://github.com/Xposed-Modules-Repo/submission/blob/main/README.md). This source repository and the [Xposed module catalog repository](https://github.com/Xposed-Modules-Repo/cn.rkbkosp.oppopushguard) are separate repositories. Check and sync the catalog documentation and summary separately; merging a source PR does not establish that the catalog has updated.
+The catalog uses [`SUMMARY`](SUMMARY) (without an extension) for its short description and `README.md` for the full description; see the [submission instructions](https://github.com/Xposed-Modules-Repo/submission/blob/master/README.md). This source repository and the [Xposed module catalog repository](https://github.com/Xposed-Modules-Repo/cn.rkbkosp.oppopushguard) are separate repositories. Check and sync the catalog documentation and summary separately; merging a source PR does not establish that the catalog has updated.
 
 </details>
 
